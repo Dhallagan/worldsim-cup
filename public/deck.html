@@ -56,7 +56,7 @@
   .brandrow{display:flex;align-items:center;gap:14px;margin-bottom:28px}
   .mark{width:54px;height:54px;border-radius:14px;background:var(--accent);display:grid;place-items:center;font-size:30px;box-shadow:0 10px 30px rgba(47,111,237,.5)}
   .brandname{font-weight:800;font-size:clamp(16px,1.6vw,20px);letter-spacing:-.01em}
-  .title-sub{margin-top:26px;font-size:clamp(17px,2vw,26px);font-weight:600;max-width:36ch;line-height:1.4;color:rgba(255,255,255,.82)}
+  .title-sub{margin-top:26px;font-size:clamp(17px,2vw,26px);font-weight:600;max-width:38ch;line-height:1.4;color:rgba(255,255,255,.82)}
   .title-meta{margin-top:auto;display:flex;gap:28px;flex-wrap:wrap;font-size:13px;color:rgba(255,255,255,.55);font-weight:600}
   .title-meta b{color:#fff;font-weight:700}
 
@@ -103,26 +103,28 @@
   .gnode.cap{background:linear-gradient(160deg,#1a4fc4,#2f6fed);border-color:transparent}
   .gnode.cap.usa{background:rgba(255,255,255,.1)}
   .gnode .seed{font-size:11px;color:rgba(255,255,255,.5);font-weight:600}
+  .gnode .wp{margin-top:auto;font-size:12px;font-weight:800;color:#fff;font-variant-numeric:tabular-nums}
+  .gnode .wp span{color:rgba(255,255,255,.5);font-weight:600}
   .arrow{align-self:center;color:rgba(255,255,255,.4);font-size:20px}
 
   /* ---------- Flow steps ---------- */
-  .flow{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:auto}
-  .fstep{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:0 1px 2px rgba(14,20,48,.05),0 14px 30px rgba(14,20,48,.06)}
-  .fstep .n{width:34px;height:34px;border-radius:9px;background:var(--accent);color:#fff;font-weight:800;display:grid;place-items:center;font-size:15px;margin-bottom:14px}
-  .fstep h3{font-size:17px;font-weight:800;letter-spacing:-.01em;margin-bottom:6px}
-  .fstep p{font-size:13.5px;color:var(--muted);line-height:1.45}
+  .flow{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:auto}
+  .fstep{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:0 1px 2px rgba(14,20,48,.05),0 14px 30px rgba(14,20,48,.06)}
+  .fstep .n{width:32px;height:32px;border-radius:9px;background:var(--accent);color:#fff;font-weight:800;display:grid;place-items:center;font-size:14px;margin-bottom:13px}
+  .fstep h3{font-size:15.5px;font-weight:800;letter-spacing:-.01em;margin-bottom:6px}
+  .fstep p{font-size:12.5px;color:var(--muted);line-height:1.45}
 
   /* ---------- Architecture ---------- */
   .arch{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(20px,3vw,54px);margin-top:auto;align-items:center}
-  .layers{display:flex;flex-direction:column;gap:12px}
-  .layer{display:flex;align-items:center;gap:16px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:14px 18px}
+  .layers{display:flex;flex-direction:column;gap:11px}
+  .layer{display:flex;align-items:center;gap:16px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:13px 18px}
   .layer .ic{width:42px;height:42px;border-radius:11px;display:grid;place-items:center;font-size:21px;flex:none}
   .layer .lt{font-weight:800;font-size:15.5px}
   .layer .ld{font-size:12.5px;color:rgba(255,255,255,.6);margin-top:2px}
   .i-blue{background:rgba(47,111,237,.2)} .i-green{background:rgba(24,169,87,.22)}
   .i-amber{background:rgba(230,161,0,.22)} .i-red{background:rgba(232,35,63,.2)}
   .i-violet{background:rgba(140,110,255,.22)} .i-cyan{background:rgba(60,190,220,.22)}
-  .diagram{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:24px;font-family:var(--mono);font-size:13px;line-height:1.9;color:#cdd8f5}
+  .diagram{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:24px;font-family:var(--mono);font-size:13px;line-height:1.85;color:#cdd8f5}
   .diagram .c-acc{color:#7fb0ff} .diagram .c-g{color:#6ee2a0} .diagram .c-m{color:#8a93b5}
 
   /* ---------- Contract / principle ---------- */
@@ -148,10 +150,24 @@
   .codeline{margin-top:24px;font-family:var(--mono);font-size:13.5px;color:#9fb0d8;background:rgba(0,0,0,.25);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:16px 20px}
   .codeline .k{color:#7fb0ff} .codeline .s{color:#6ee2a0}
 
+  /* ---------- The answer / odds ---------- */
+  .answer{display:grid;grid-template-columns:auto 1fr;gap:clamp(28px,5vw,72px);margin-top:auto;align-items:center}
+  .ohero .ov{font-size:clamp(72px,15vw,180px);font-weight:900;letter-spacing:-.05em;line-height:.82;color:#fff;font-variant-numeric:tabular-nums}
+  .ohero .ol{font-size:clamp(13px,1.4vw,17px);font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#9cc0ff;margin-top:14px}
+  .ohero .od{font-size:13px;color:rgba(255,255,255,.55);margin-top:8px;max-width:22ch;line-height:1.4}
+  .survival{display:flex;flex-direction:column;gap:13px}
+  .srow{display:flex;align-items:center;gap:14px}
+  .srow .sflag{font-size:24px;width:30px;text-align:center;flex:none}
+  .srow .sopp{width:88px;font-weight:800;font-size:14px;flex:none}
+  .srow .sbar{flex:1;height:16px;background:rgba(255,255,255,.07);border-radius:999px;overflow:hidden}
+  .srow .sfill{height:100%;border-radius:999px;background:linear-gradient(90deg,#2f6fed,#5b8df2)}
+  .srow .spct{width:118px;text-align:right;font-variant-numeric:tabular-nums;font-weight:800;font-size:14px;flex:none}
+  .srow .spct span{color:rgba(255,255,255,.45);font-weight:600;font-size:12px}
+
   /* ---------- Wow / agent console ---------- */
   .wow{display:grid;grid-template-columns:1fr 380px;gap:clamp(20px,3vw,46px);margin-top:auto;align-items:stretch}
-  .stages{display:flex;flex-direction:column;gap:12px;justify-content:center}
-  .stg{display:flex;gap:16px;align-items:flex-start;padding:14px 16px;border-radius:14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1)}
+  .stages{display:flex;flex-direction:column;gap:11px;justify-content:center}
+  .stg{display:flex;gap:16px;align-items:flex-start;padding:13px 16px;border-radius:14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1)}
   .stg .num{width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;display:grid;place-items:center;font-size:13px;flex:none}
   .stg .st{font-weight:800;font-size:15.5px}
   .stg .sd{font-size:12.5px;color:rgba(255,255,255,.62);margin-top:2px;line-height:1.4}
@@ -171,6 +187,9 @@
   .bigodds .vl{font-size:clamp(15px,2vw,22px);font-weight:700;color:rgba(255,255,255,.7);max-width:18ch;line-height:1.3}
   .payoff{display:flex;gap:16px;flex-wrap:wrap;margin-top:auto}
   .pchip{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:11px 20px;font-weight:700;font-size:14.5px}
+  .links{margin-top:auto;display:flex;gap:14px;flex-wrap:wrap;align-items:center;font-family:var(--mono);font-size:13.5px;color:rgba(255,255,255,.65)}
+  .links a{color:#9cc0ff;text-decoration:none;font-weight:700}
+  .links .sep{opacity:.4}
 
   /* ---------- Chrome: nav, dots, progress ---------- */
   .topbar{position:fixed;top:0;left:0;right:0;height:4px;background:rgba(255,255,255,.08);z-index:50}
@@ -186,8 +205,9 @@
   .hint{position:fixed;bottom:20px;left:26px;font-size:11.5px;color:rgba(140,150,180,.55);font-weight:600;z-index:50;font-family:var(--mono)}
 
   @media (max-width:860px){
-    .flow,.specs{grid-template-columns:1fr 1fr}
-    .arch,.wow,.twocol{grid-template-columns:1fr}
+    .flow{grid-template-columns:1fr 1fr}
+    .specs{grid-template-columns:1fr 1fr}
+    .arch,.wow,.twocol,.answer{grid-template-columns:1fr}
     .gauntlet{display:grid;grid-template-columns:1fr 1fr}
     .arrow{display:none}
     .navbtn{display:none}
@@ -207,12 +227,12 @@
     </div>
     <div class="kicker">A presentation</div>
     <h1>Can the USA<br>win the World&nbsp;Cup?</h1>
-    <p class="title-sub">An AI-assisted tournament simulator that runs the USA's gauntlet to the title — and streams the whole thing back, live.</p>
+    <p class="title-sub">A <b>MiroFish</b> agent swarm that Monte&nbsp;Carlo–simulates the USA's gauntlet to the title — and streams the whole prediction back, live.</p>
     <div class="title-meta">
       <span><b>Next.js 16</b> · React 19</span>
-      <span><b>Claude</b> via AI SDK</span>
-      <span><b>Eve</b> durable agent</span>
-      <span><b>Supabase</b> · Auth0 · Resend</span>
+      <span><b>Claude</b> · AI SDK v7</span>
+      <span><b>Supabase</b> · Resend · Auth0</span>
+      <span><b>worldsim-cup.vercel.app</b></span>
     </div>
   </section>
 
@@ -221,10 +241,10 @@
     <div class="kicker">Where it started</div>
     <div class="origin">
       <div>
-        <div class="big">I was on the subway,<br>saw this, and thought:<br><i>“how hard could it be?”</i></div>
+        <div class="big">I saw this, and<br>thought: <i>“what are<br>the actual odds?”</i></div>
         <p>A viral <b style="color:#fff">@Novig</b> post laid out the USA's brutal hypothetical road to the World Cup. Everyone argued about it. Nobody had the number.</p>
-        <p style="margin-top:14px">So by the time I got off the train, I was building the thing that would actually <b style="color:#fff">compute the odds</b> — and let you watch it run.</p>
-        <div class="sub-anec"><span class="pill">3.1M views</span> one tweet · one bracket · one question</div>
+        <p style="margin-top:14px">So I built the thing that would actually <b style="color:#fff">compute the odds</b> — and let you watch a swarm of agents run it.</p>
+        <div class="sub-anec"><span class="pill">3.2M views</span> one tweet · one bracket · one question</div>
       </div>
 
       <div class="shot-wrap">
@@ -236,7 +256,7 @@
             <div class="tw-av">N</div>
             <div>
               <div class="tw-name">Novig <span class="tw-check">✦</span></div>
-              <div class="tw-handle">@Novig</div>
+              <div class="tw-handle">@Novig · 15h</div>
             </div>
             <div class="tw-logo">𝕏</div>
           </div>
@@ -249,23 +269,10 @@
             <li><span class="fl">🇦🇷</span> Final — Argentina</li>
           </ul>
           <div class="tw-photo"><div class="pc"><div class="pe">😬🇺🇸</div>nervous USA fans watching the draw</div></div>
-          <div class="tw-time">1:05 AM · <b>Jun 27, 2026</b> · <b>3.1M</b> Views</div>
-          <div class="tw-stats"><span>💬 <b>477</b></span><span>🔁 <b>457</b></span><span>♥ <b>8.3K</b></span><span>🔖 <b>657</b></span></div>
+          <div class="tw-stats"><span>💬 <b>481</b></span><span>🔁 <b>466</b></span><span>♥ <b>8.4K</b></span><span>📊 <b>3.2M</b></span><span>🔖</span><span>↗</span></div>
         </div>
         <div class="shot-cap">the post that started it — drop the real shot at /novig-tweet.png to swap in</div>
       </div>
-    </div>
-  </section>
-
-  <!-- 3 · THE HOOK -->
-  <section class="slide light">
-    <div class="kicker">The question</div>
-    <h2>Everyone argued. Nobody had the number.</h2>
-    <p class="lede" style="max-width:42ch">The USA, seeded into a brutal five-round bracket on the way to the trophy. The question wasn't <i>"who's best"</i> — it was <b>"what are the actual odds the USA survives all five?"</b></p>
-    <div class="grow"></div>
-    <div style="display:flex;gap:40px;flex-wrap:wrap;align-items:flex-end">
-      <div><div style="font-size:clamp(40px,6vw,72px);font-weight:900;letter-spacing:-.04em;line-height:.9" class="accent">5 rounds</div><div style="color:var(--muted);font-weight:600;margin-top:8px">R32 → R16 → QF → SF → Final</div></div>
-      <div style="max-width:30ch;color:var(--muted);font-size:15px;line-height:1.5;font-weight:500">So we built a simulator to settle it — and turned the answer into a live product you can <b style="color:var(--ink)">watch run</b>.</div>
     </div>
   </section>
 
@@ -276,85 +283,56 @@
     <p class="lede">The fixed bracket the whole app is built around. Win all five — or the dream ends.</p>
     <div class="gauntlet">
       <div class="gnode cap usa"><span class="flag">🇺🇸</span><div class="rnd">Run by</div><div class="opp">USA</div><div class="seed">always "home"</div></div>
-      <div class="gnode"><span class="flag">🇧🇦</span><div class="rnd">Round of 32</div><div class="opp">Bosnia</div></div>
-      <div class="gnode"><span class="flag">🇧🇪</span><div class="rnd">Round of 16</div><div class="opp">Belgium</div></div>
-      <div class="gnode"><span class="flag">🇪🇸</span><div class="rnd">Quarterfinal</div><div class="opp">Spain</div></div>
-      <div class="gnode"><span class="flag">🇫🇷</span><div class="rnd">Semifinal</div><div class="opp">France</div></div>
-      <div class="gnode cap"><span class="flag">🇦🇷</span><div class="rnd">Final</div><div class="opp">Argentina</div><div class="seed">🏆 winner takes all</div></div>
+      <div class="gnode"><span class="flag">🇧🇦</span><div class="rnd">Round of 32</div><div class="opp">Bosnia</div><div class="wp">59% <span>USA win</span></div></div>
+      <div class="gnode"><span class="flag">🇧🇪</span><div class="rnd">Round of 16</div><div class="opp">Belgium</div><div class="wp">43% <span>USA win</span></div></div>
+      <div class="gnode"><span class="flag">🇪🇸</span><div class="rnd">Quarterfinal</div><div class="opp">Spain</div><div class="wp">39% <span>USA win</span></div></div>
+      <div class="gnode"><span class="flag">🇫🇷</span><div class="rnd">Semifinal</div><div class="opp">France</div><div class="wp">35% <span>USA win</span></div></div>
+      <div class="gnode cap"><span class="flag">🇦🇷</span><div class="rnd">Final</div><div class="opp">Argentina</div><div class="wp">37% <span>USA win</span></div></div>
     </div>
   </section>
 
-  <!-- 4 · WHAT IT DOES -->
+  <!-- 4 · THE METHOD / MIROFISH -->
   <section class="slide light">
-    <div class="kicker">What it does</div>
-    <h2>One click. A whole tournament.</h2>
-    <p class="lede" style="max-width:46ch">You hit <b style="color:var(--ink)">"Run the swarm,"</b> and the app builds rosters, simulates the bracket, narrates it, stores it, and emails the verdict.</p>
+    <div class="kicker">The method · MiroFish swarm</div>
+    <h2>Don't guess the bracket. Simulate it.</h2>
+    <p class="lede" style="max-width:48ch">Modeled on <b style="color:var(--ink)">MiroFish</b> — a swarm-intelligence prediction engine. One click runs a five-stage lifecycle: a graph of the world, a swarm of player agents, thousands of simulations, and an agent that writes the verdict.</p>
     <div class="flow">
-      <div class="fstep"><div class="n">1</div><h3>Build rosters</h3><p>Rated players per nation, with AI-generated personas &amp; taglines.</p></div>
-      <div class="fstep"><div class="n">2</div><h3>Simulate</h3><p>2,000 Monte Carlo runs per round + one featured champion playthrough.</p></div>
-      <div class="fstep"><div class="n">3</div><h3>Narrate</h3><p>Claude writes commentary, player flavor, and the model's verdict.</p></div>
-      <div class="fstep"><div class="n">4</div><h3>Persist &amp; recap</h3><p>Results saved to Supabase; a recap email goes out via Resend.</p></div>
+      <div class="fstep"><div class="n">1</div><h3>Graph Building</h3><p>Extract entities — teams, players, the bracket path — from the seed.</p></div>
+      <div class="fstep"><div class="n">2</div><h3>Environment Setup</h3><p>Spin up a player agent per athlete, persona seeded from real attributes.</p></div>
+      <div class="fstep"><div class="n">3</div><h3>Simulation</h3><p>2,000 Monte Carlo runs / round + one featured champion playthrough.</p></div>
+      <div class="fstep"><div class="n">4</div><h3>Report Agent</h3><p>Reads the sim logs and writes the title verdict — Monte Carlo as an agent.</p></div>
+      <div class="fstep"><div class="n">5</div><h3>Persist &amp; Recap</h3><p>Saved to Supabase; a recap email goes out via Resend.</p></div>
     </div>
   </section>
 
-  <!-- 5 · ARCHITECTURE -->
-  <section class="slide dark">
-    <div class="kicker">The architecture</div>
-    <h2>Six services, one thin client each.</h2>
-    <div class="arch">
-      <div class="layers">
-        <div class="layer"><div class="ic i-blue">▲</div><div><div class="lt">Next.js 16 on Vercel</div><div class="ld">App Router · React 19 · streaming API routes</div></div></div>
-        <div class="layer"><div class="ic i-violet">🎲</div><div><div class="lt">Deterministic sim engine</div><div class="ld">Poisson xG model · seeded RNG · Monte Carlo</div></div></div>
-        <div class="layer"><div class="ic i-amber">✦</div><div><div class="lt">Vercel AI SDK + Claude</div><div class="ld">commentary · personas · the ReportAgent verdict</div></div></div>
-        <div class="layer"><div class="ic i-cyan">⟳</div><div><div class="lt">Eve durable agent</div><div class="ld">the "tournament director" orchestrating the run</div></div></div>
-        <div class="layer"><div class="ic i-green">⛁</div><div><div class="lt">Supabase</div><div class="ld">tournaments · teams · players · matches · events</div></div></div>
-        <div class="layer"><div class="ic i-red">✉</div><div><div class="lt">Auth0 + Resend</div><div class="ld">login at the edge · champion recap emails</div></div></div>
-      </div>
-      <div class="diagram">
-<span class="c-m">// one POST, an NDJSON stream</span><br>
-<span class="c-acc">browser</span> ── click ──▶ <span class="c-acc">/api/agent</span><br>
-&nbsp;&nbsp;&nbsp;│<br>
-&nbsp;&nbsp;&nbsp;├─▶ <span class="c-g">buildKnowledgeGraph()</span><br>
-&nbsp;&nbsp;&nbsp;├─▶ <span class="c-g">generatePersonas()</span> ·· Claude<br>
-&nbsp;&nbsp;&nbsp;├─▶ <span class="c-g">runMonteCarlo(2000)</span><br>
-&nbsp;&nbsp;&nbsp;├─▶ <span class="c-g">findChampionRun()</span><br>
-&nbsp;&nbsp;&nbsp;├─▶ <span class="c-g">reportAgent()</span> ······ Claude<br>
-&nbsp;&nbsp;&nbsp;├─▶ <span class="c-g">saveToSupabase()</span><br>
-&nbsp;&nbsp;&nbsp;└─▶ <span class="c-g">sendRecap()</span> ········ Resend<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-m">events stream back, live</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- 6 · THE CONTRACT -->
+  <!-- 5 · THE CONTRACT -->
   <section class="slide trophy">
     <div class="kicker">The design principle</div>
-    <h2>The math is deterministic.<br>The AI is just the voice.</h2>
+    <h2>Agents narrate.<br>Deterministic code computes.</h2>
     <div class="twocol">
       <div class="card det">
         <div class="ct">⚙ Deterministic code owns</div>
-        <h3>State &amp; scores</h3>
+        <h3>The numbers</h3>
         <ul>
           <li>Goals, winners, penalties — from a seeded engine</li>
           <li>Monte Carlo odds, reproducible every run</li>
-          <li>Everything written to the database</li>
+          <li>Every run written to the database</li>
         </ul>
       </div>
       <div class="card llm">
         <div class="ct">✦ Claude owns</div>
-        <h3>The narrative</h3>
+        <h3>The voice</h3>
         <ul>
-          <li>Roster flavor &amp; player personas</li>
+          <li>Player-agent personas &amp; trash talk</li>
           <li>Live commentary on each match</li>
-          <li>The verdict + recap email copy</li>
+          <li>The ReportAgent verdict + recap email</li>
         </ul>
       </div>
     </div>
-    <p class="rule">The agent <b>never</b> alters a final score after the simulator produces it.</p>
+    <p class="rule">An LLM can't run 2,000 sims and be trusted. So it <b>never</b> decides a score — it only tells the story.</p>
   </section>
 
-  <!-- 7 · UNDER THE HOOD -->
+  <!-- 6 · UNDER THE HOOD -->
   <section class="slide dark">
     <div class="kicker">Under the hood</div>
     <h2>Why the odds are trustworthy.</h2>
@@ -369,42 +347,93 @@
     </div>
   </section>
 
+  <!-- 7 · THE ANSWER -->
+  <section class="slide dark">
+    <div class="kicker">The answer</div>
+    <h2>Survive all five? 1.2% of the time.</h2>
+    <p class="lede" style="max-width:46ch">Even favorable single games compound. Watch the USA's survival decay round by round.</p>
+    <div class="answer">
+      <div class="ohero">
+        <div class="ov">1.2<span style="font-size:.45em">%</span></div>
+        <div class="ol">USA title odds</div>
+        <div class="od">cumulative — the product of all five rounds</div>
+      </div>
+      <div class="survival">
+        <div class="srow"><span class="sflag">🇧🇦</span><span class="sopp">Bosnia</span><span class="sbar"><span class="sfill" style="width:59%"></span></span><span class="spct">59% <span>alive</span></span></div>
+        <div class="srow"><span class="sflag">🇧🇪</span><span class="sopp">Belgium</span><span class="sbar"><span class="sfill" style="width:25%"></span></span><span class="spct">25% <span>alive</span></span></div>
+        <div class="srow"><span class="sflag">🇪🇸</span><span class="sopp">Spain</span><span class="sbar"><span class="sfill" style="width:10%"></span></span><span class="spct">9.8% <span>alive</span></span></div>
+        <div class="srow"><span class="sflag">🇫🇷</span><span class="sopp">France</span><span class="sbar"><span class="sfill" style="width:3.4%"></span></span><span class="spct">3.4% <span>alive</span></span></div>
+        <div class="srow"><span class="sflag">🇦🇷</span><span class="sopp">Argentina</span><span class="sbar"><span class="sfill" style="width:1.2%"></span></span><span class="spct">1.2% <span>champions</span></span></div>
+      </div>
+    </div>
+  </section>
+
   <!-- 8 · THE WOW MOMENT -->
   <section class="slide dark">
     <div class="kicker">✦ The wow moment</div>
-    <h2>You watch the agent think.</h2>
-    <p class="lede" style="max-width:48ch">One button opens a live console. A five-stage agent lifecycle streams as NDJSON — reasoning, tool calls, and results scrolling in real time.</p>
+    <h2>You watch the swarm think.</h2>
+    <p class="lede" style="max-width:48ch">One button opens a live console. The five-stage MiroFish lifecycle streams as NDJSON — reasoning, tool calls, and results scrolling in real time.</p>
     <div class="wow">
       <div class="stages">
-        <div class="stg"><div class="num">1</div><div><div class="st">Graph Building</div><div class="sd">GraphRAG over teams, players &amp; fixtures</div></div></div>
-        <div class="stg"><div class="num">2</div><div><div class="st">Environment Setup</div><div class="sd">spins up autonomous player agents with personas</div></div></div>
+        <div class="stg"><div class="num">1</div><div><div class="st">Graph Building</div><div class="sd">entities from the seed — 6 nations, 20 players</div></div></div>
+        <div class="stg"><div class="num">2</div><div><div class="st">Environment Setup</div><div class="sd">player agents spun up, personas from attributes</div></div></div>
         <div class="stg"><div class="num">3</div><div><div class="st">Simulation Execution</div><div class="sd">2,000 Monte Carlo runs + the featured run</div></div></div>
         <div class="stg"><div class="num">4</div><div><div class="st">Report Generation</div><div class="sd">the ReportAgent reads the logs &amp; writes the verdict</div></div></div>
         <div class="stg"><div class="num">5</div><div><div class="st">Persist &amp; Recap</div><div class="sd">save to Supabase, email via Resend</div></div></div>
       </div>
       <div class="console">
-        <div class="chead"><span class="pdot"></span> tournament director · live</div>
+        <div class="chead"><span class="pdot"></span> MiroFish Swarm Agent · live</div>
         <div class="clog">
           <div class="stage">▸ Graph Building</div>
-          <div class="rs">Ingesting USA's bracket path…</div>
-          <div><span class="tool">buildKnowledgeGraph</span> <span class="ok">✓ 8 nations · 88 players</span></div>
+          <div><span class="tool">buildKnowledgeGraph</span> <span class="ok">✓ 6 nations · 20 players</span></div>
           <div class="stage">▸ Simulation Execution</div>
-          <div><span class="tool">runMonteCarlo</span> <span class="ok">✓ title odds computed</span></div>
+          <div><span class="tool">runMonteCarlo</span> <span class="ok">✓ title odds 1.2%</span></div>
           <div><span class="tool">simulatePlaythrough</span> <span class="ok">✓ USA win the cup 🏆</span></div>
           <div class="stage">▸ Report Generation</div>
-          <div class="rs">reading logs to write the verdict<span class="cur">▋</span></div>
+          <div><span class="tool">saveToSupabase</span> <span class="ok">✓ saved row</span></div>
+          <div><span class="tool">sendRecap</span> <span class="ok">✓ emailed</span></div>
+          <div class="rs">writing the verdict<span class="cur">▋</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 9 · THE PAYOFF -->
+  <!-- 9 · ARCHITECTURE -->
+  <section class="slide dark">
+    <div class="kicker">The architecture</div>
+    <h2>Five services, one thin client each.</h2>
+    <div class="arch">
+      <div class="layers">
+        <div class="layer"><div class="ic i-blue">▲</div><div><div class="lt">Next.js 16 on Vercel</div><div class="ld">App Router · React 19 · streaming NDJSON routes</div></div></div>
+        <div class="layer"><div class="ic i-violet">🎲</div><div><div class="lt">Deterministic sim engine</div><div class="ld">Poisson xG · seeded RNG · Monte Carlo</div></div></div>
+        <div class="layer"><div class="ic i-cyan">⟳</div><div><div class="lt">MiroFish orchestrator agent</div><div class="ld">AI SDK v7 · 5-stage lifecycle · streams NDJSON</div></div></div>
+        <div class="layer"><div class="ic i-amber">✦</div><div><div class="lt">Claude — Haiku + Sonnet</div><div class="ld">personas (parallel) · the ReportAgent verdict</div></div></div>
+        <div class="layer"><div class="ic i-green">⛁</div><div><div class="lt">Supabase</div><div class="ld">every run persisted — sim_runs</div></div></div>
+        <div class="layer"><div class="ic i-red">✉</div><div><div class="lt">Resend + Auth0</div><div class="ld">recap email · non-blocking login</div></div></div>
+      </div>
+      <div class="diagram">
+<span class="c-m">// one POST, an NDJSON stream</span><br>
+<span class="c-acc">browser</span> ── click ──▶ <span class="c-acc">/api/agent</span><br>
+&nbsp;&nbsp;&nbsp;├─▶ <span class="c-g">buildKnowledgeGraph()</span><br>
+&nbsp;&nbsp;&nbsp;├─▶ <span class="c-g">generatePersonas()</span> ·· Claude<br>
+&nbsp;&nbsp;&nbsp;├─▶ <span class="c-g">runMonteCarlo(2000)</span><br>
+&nbsp;&nbsp;&nbsp;├─▶ <span class="c-g">simulatePlaythrough()</span><br>
+&nbsp;&nbsp;&nbsp;├─▶ <span class="c-g">reportAgent()</span> ······ Claude<br>
+&nbsp;&nbsp;&nbsp;├─▶ <span class="c-g">saveToSupabase()</span><br>
+&nbsp;&nbsp;&nbsp;└─▶ <span class="c-g">sendRecap()</span> ········ Resend<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;▼<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-m">events stream back, live</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 · THE PAYOFF -->
   <section class="slide trophy center">
     <div class="kicker">The payoff</div>
-    <h2 style="max-width:18ch">From a bet to a verdict — in one stream.</h2>
+    <h2 style="max-width:18ch">From a tweet to a verdict — in one stream.</h2>
     <div class="bigodds">
       <div class="v">🏆</div>
-      <div class="vl">The hero readout shows USA's <b style="color:#fff">live title odds</b>, computed from thousands of sims — and a champion run you can replay goal-by-goal.</div>
+      <div class="vl">Live title odds from thousands of sims, a champion run you can replay goal-by-goal, and a Claude-written verdict — all from one click.</div>
     </div>
     <div class="payoff">
       <div class="pchip">📊 Live Monte Carlo odds</div>
@@ -414,14 +443,18 @@
     </div>
   </section>
 
-  <!-- 10 · CLOSE -->
+  <!-- 11 · CLOSE -->
   <section class="slide dark center">
     <div class="brandrow"><div class="mark">⚽</div><div class="brandname">WorldSim Cup</div></div>
     <h1 style="font-size:clamp(30px,5.4vw,68px)">Deterministic where it counts.<br><span class="accent">Generative where it delights.</span></h1>
-    <p class="lede" style="margin-top:24px;max-width:44ch">A simulator you don't just read — you watch it run, live, end to end.</p>
-    <div class="grow"></div>
-    <div style="display:flex;gap:14px;align-items:center;color:rgba(255,255,255,.55);font-weight:600;font-size:14px">
-      <span style="background:var(--accent);color:#fff;padding:10px 22px;border-radius:10px;font-weight:800">Run the swarm →</span>
+    <p class="lede" style="margin-top:24px;max-width:44ch">A prediction you don't just read — you watch a swarm run it, live, end to end.</p>
+    <div class="links">
+      <span>🔗 <a href="https://worldsim-cup.vercel.app">worldsim-cup.vercel.app</a></span>
+      <span class="sep">·</span>
+      <span>⌥ <a href="https://github.com/Dhallagan/worldsim-cup">github.com/Dhallagan/worldsim-cup</a></span>
+    </div>
+    <div style="margin-top:18px;display:flex;gap:14px;align-items:center;color:rgba(255,255,255,.55);font-weight:600;font-size:14px">
+      <a href="/" style="background:var(--accent);color:#fff;padding:10px 22px;border-radius:10px;font-weight:800;text-decoration:none;box-shadow:0 8px 22px rgba(47,111,237,.45)">Run the swarm →</a>
       <span>Thanks for watching.</span>
     </div>
   </section>
@@ -431,7 +464,7 @@
 <button class="navbtn prev" id="prev" aria-label="Previous">‹</button>
 <button class="navbtn next" id="next" aria-label="Next">›</button>
 <div class="hud"><div class="dots" id="dots"></div></div>
-<div class="counter" id="counter">01 / 10</div>
+<div class="counter" id="counter">01 / 11</div>
 <div class="hint" id="hint">← → · space · F fullscreen</div>
 
 <script>
