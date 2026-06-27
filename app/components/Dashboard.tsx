@@ -4,7 +4,9 @@ import { useEffect, useRef, useState } from "react";
 import PathBracket from "./PathBracket";
 import PlayersTab from "./PlayersTab";
 import LiveMatch from "./LiveMatch";
+import AgentMatchReplay from "./AgentMatchReplay";
 import AgentConsole, { type Line, toLine } from "./AgentConsole";
+import { getAgentMatch } from "@/lib/agentMatches";
 import { PATH, getTeam } from "@/lib/teams";
 import type {
   AgentEvent,
@@ -33,6 +35,8 @@ export default function Dashboard({ userEmail }: { userEmail?: string | null }) 
   const [lines, setLines] = useState<Line[]>([]);
   const [stage, setStage] = useState("");
   const [liveMatch, setLiveMatch] = useState<MatchResult | null>(null);
+  const [agentReplay, setAgentReplay] = useState(false);
+  const agentMatch = getAgentMatch("usa-spain");
 
   // When true, the featured run auto-opens the match sim and plays the whole
   // gauntlet. A ref (read inside the async stream) avoids stale closures.
@@ -229,9 +233,22 @@ export default function Dashboard({ userEmail }: { userEmail?: string | null }) 
             }}
           />
         )}
+        {tab === "Matches" && agentMatch && (
+          <button
+            className="agent-match-cta"
+            onClick={() => setAgentReplay(true)}
+          >
+            <span className="amc-badge">NEW · MiroFish</span>
+            <span className="amc-text">
+              🧠 The agents <b>actually played</b> the Spain quarterfinal —{" "}
+              {agentMatch.agentCalls} possession-by-possession decisions. Watch
+              it →
+            </span>
+          </button>
+        )}
         {tab === "Matches" && run && (
           <p className="hint-line">
-            Tip: click any match to replay it live with commentary.
+            Tip: click any match to replay the odds sim with commentary.
           </p>
         )}
         {tab === "Players" && <PlayersTab personas={personas} />}
@@ -253,6 +270,12 @@ export default function Dashboard({ userEmail }: { userEmail?: string | null }) 
                     : undefined,
               }
             : {})}
+        />
+      )}
+      {agentReplay && agentMatch && (
+        <AgentMatchReplay
+          match={agentMatch}
+          onClose={() => setAgentReplay(false)}
         />
       )}
 

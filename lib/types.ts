@@ -9,7 +9,67 @@ export interface Player {
   dribbling: number;
   defending: number;
   physical: number;
+  starter?: boolean;
   persona?: string;
+}
+
+/* ---------- Multi-agent match sim (MiroFish) ---------- */
+
+export type Zone = "def" | "mid" | "att";
+export type PossessionAction =
+  | "pass"
+  | "dribble"
+  | "shoot"
+  | "cross"
+  | "longball"
+  | "clear";
+
+/** What a ball-carrier agent decided to do this possession. */
+export interface AgentDecision {
+  action: PossessionAction;
+  targetId?: string;
+  intent: string;
+}
+
+export type AgentEventType =
+  | "kickoff"
+  | "pass"
+  | "dribble"
+  | "tackle"
+  | "interception"
+  | "cross"
+  | "clear"
+  | "shot"
+  | "save"
+  | "goal"
+  | "fulltime";
+
+export interface AgentMatchEvent {
+  minute: number;
+  teamId: string;
+  zone: Zone;
+  type: AgentEventType;
+  playerId?: string;
+  player?: string;
+  targetId?: string;
+  target?: string;
+  text: string;
+  intent?: string;
+  homeGoals: number;
+  awayGoals: number;
+}
+
+/** A full match played out by player agents, possession by possession. */
+export interface AgentMatch {
+  homeId: string;
+  awayId: string;
+  homeGoals: number;
+  awayGoals: number;
+  usaWon: boolean;
+  decided: "reg" | "pens";
+  events: AgentMatchEvent[];
+  agentCalls: number;
+  seed: number;
 }
 
 export interface TeamRating {

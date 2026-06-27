@@ -5,14 +5,23 @@
     "code": "USA",
     "flag": "🇺🇸",
     "color": "#0a3161",
-    "rank": 11,
+    "rank": 16,
     "rating": { "attack": 77, "midfield": 79, "defense": 78, "overall": 78 },
     "players": [
-      { "id": "pulisic", "name": "Christian Pulisic", "pos": "RW", "overall": 84, "pace": 90, "shooting": 82, "passing": 80, "dribbling": 87, "defending": 45, "physical": 66 },
-      { "id": "mckennie", "name": "Weston McKennie", "pos": "CM", "overall": 79, "pace": 75, "shooting": 74, "passing": 78, "dribbling": 76, "defending": 73, "physical": 82 },
-      { "id": "adams", "name": "Tyler Adams", "pos": "CDM", "overall": 78, "pace": 80, "shooting": 60, "passing": 76, "dribbling": 72, "defending": 82, "physical": 78 },
-      { "id": "robinson", "name": "Antonee Robinson", "pos": "LB", "overall": 78, "pace": 92, "shooting": 55, "passing": 72, "dribbling": 74, "defending": 78, "physical": 74 },
-      { "id": "turner", "name": "Matt Turner", "pos": "GK", "overall": 79, "pace": 50, "shooting": 25, "passing": 60, "dribbling": 40, "defending": 25, "physical": 78 }
+      { "id": "matt-turner", "name": "Matt Turner", "pos": "GK", "starter": true, "overall": 79, "pace": 50, "shooting": 25, "passing": 55, "dribbling": 45, "defending": 22, "physical": 78 },
+      { "id": "sergino-dest", "name": "Sergiño Dest", "pos": "RB", "starter": true, "overall": 78, "pace": 84, "shooting": 58, "passing": 76, "dribbling": 82, "defending": 73, "physical": 64 },
+      { "id": "chris-richards", "name": "Chris Richards", "pos": "CB", "starter": true, "overall": 76, "pace": 78, "shooting": 38, "passing": 64, "dribbling": 60, "defending": 76, "physical": 80 },
+      { "id": "tim-ream", "name": "Tim Ream", "pos": "CB", "starter": true, "overall": 74, "pace": 60, "shooting": 35, "passing": 70, "dribbling": 58, "defending": 75, "physical": 74 },
+      { "id": "antonee-robinson", "name": "Antonee Robinson", "pos": "LB", "starter": true, "overall": 80, "pace": 92, "shooting": 52, "passing": 73, "dribbling": 76, "defending": 78, "physical": 76 },
+      { "id": "tyler-adams", "name": "Tyler Adams", "pos": "CDM", "starter": true, "overall": 79, "pace": 78, "shooting": 58, "passing": 75, "dribbling": 74, "defending": 80, "physical": 80 },
+      { "id": "weston-mckennie", "name": "Weston McKennie", "pos": "CM", "starter": true, "overall": 79, "pace": 72, "shooting": 73, "passing": 76, "dribbling": 76, "defending": 74, "physical": 82 },
+      { "id": "yunus-musah", "name": "Yunus Musah", "pos": "CM", "starter": true, "overall": 77, "pace": 84, "shooting": 60, "passing": 74, "dribbling": 80, "defending": 68, "physical": 78 },
+      { "id": "christian-pulisic", "name": "Christian Pulisic", "pos": "RW", "starter": true, "overall": 84, "pace": 90, "shooting": 82, "passing": 80, "dribbling": 87, "defending": 45, "physical": 66 },
+      { "id": "tim-weah", "name": "Timothy Weah", "pos": "LW", "starter": true, "overall": 77, "pace": 91, "shooting": 70, "passing": 72, "dribbling": 78, "defending": 50, "physical": 72 },
+      { "id": "folarin-balogun", "name": "Folarin Balogun", "pos": "ST", "starter": true, "overall": 78, "pace": 86, "shooting": 78, "passing": 68, "dribbling": 79, "defending": 38, "physical": 72 },
+      { "id": "zack-steffen", "name": "Zack Steffen", "pos": "GK", "starter": false, "overall": 75, "pace": 48, "shooting": 22, "passing": 56, "dribbling": 44, "defending": 20, "physical": 75 },
+      { "id": "gio-reyna", "name": "Giovanni Reyna", "pos": "CAM", "starter": false, "overall": 76, "pace": 80, "shooting": 74, "passing": 78, "dribbling": 83, "defending": 42, "physical": 62 },
+      { "id": "ricardo-pepi", "name": "Ricardo Pepi", "pos": "ST", "starter": false, "overall": 75, "pace": 82, "shooting": 76, "passing": 64, "dribbling": 72, "defending": 36, "physical": 74 }
     ]
   },
   {
@@ -21,12 +30,23 @@
     "code": "BIH",
     "flag": "🇧🇦",
     "color": "#002395",
-    "rank": 74,
+    "rank": 68,
     "rating": { "attack": 74, "midfield": 72, "defense": 72, "overall": 73 },
     "players": [
-      { "id": "dzeko", "name": "Edin Džeko", "pos": "ST", "overall": 80, "pace": 62, "shooting": 84, "passing": 76, "dribbling": 75, "defending": 40, "physical": 85 },
-      { "id": "pjanic", "name": "Miralem Pjanić", "pos": "CM", "overall": 80, "pace": 64, "shooting": 74, "passing": 86, "dribbling": 80, "defending": 68, "physical": 66 },
-      { "id": "tahirovic", "name": "Benjamin Tahirović", "pos": "CDM", "overall": 73, "pace": 70, "shooting": 62, "passing": 74, "dribbling": 72, "defending": 72, "physical": 74 }
+      { "id": "nikola-vasilj", "name": "Nikola Vasilj", "pos": "GK", "starter": true, "overall": 74, "pace": 47, "shooting": 22, "passing": 52, "dribbling": 42, "defending": 20, "physical": 76 },
+      { "id": "amar-dedic", "name": "Amar Dedić", "pos": "RB", "starter": true, "overall": 76, "pace": 85, "shooting": 55, "passing": 72, "dribbling": 76, "defending": 73, "physical": 72 },
+      { "id": "nikola-katic", "name": "Nikola Katić", "pos": "CB", "starter": true, "overall": 73, "pace": 64, "shooting": 40, "passing": 58, "dribbling": 54, "defending": 74, "physical": 82 },
+      { "id": "dennis-hadzikadunic", "name": "Dennis Hadžikadunić", "pos": "CB", "starter": true, "overall": 72, "pace": 70, "shooting": 36, "passing": 60, "dribbling": 58, "defending": 72, "physical": 78 },
+      { "id": "sead-kolasinac", "name": "Sead Kolašinac", "pos": "LB", "starter": true, "overall": 76, "pace": 72, "shooting": 56, "passing": 68, "dribbling": 70, "defending": 75, "physical": 84 },
+      { "id": "amir-hadziahmetovic", "name": "Amir Hadžiahmetović", "pos": "CDM", "starter": true, "overall": 73, "pace": 68, "shooting": 56, "passing": 70, "dribbling": 70, "defending": 73, "physical": 76 },
+      { "id": "benjamin-tahirovic", "name": "Benjamin Tahirović", "pos": "CM", "starter": true, "overall": 72, "pace": 70, "shooting": 60, "passing": 73, "dribbling": 75, "defending": 66, "physical": 70 },
+      { "id": "ivan-sunjic", "name": "Ivan Šunjić", "pos": "CM", "starter": true, "overall": 72, "pace": 66, "shooting": 58, "passing": 68, "dribbling": 68, "defending": 72, "physical": 78 },
+      { "id": "esmir-bajraktarevic", "name": "Esmir Bajraktarević", "pos": "RW", "starter": true, "overall": 71, "pace": 84, "shooting": 64, "passing": 70, "dribbling": 79, "defending": 44, "physical": 64 },
+      { "id": "ermedin-demirovic", "name": "Ermedin Demirović", "pos": "LW", "starter": true, "overall": 77, "pace": 78, "shooting": 76, "passing": 72, "dribbling": 78, "defending": 48, "physical": 78 },
+      { "id": "edin-dzeko", "name": "Edin Džeko", "pos": "ST", "starter": true, "overall": 78, "pace": 58, "shooting": 81, "passing": 76, "dribbling": 74, "defending": 42, "physical": 80 },
+      { "id": "martin-zlomislic", "name": "Martin Zlomislić", "pos": "GK", "starter": false, "overall": 68, "pace": 45, "shooting": 20, "passing": 48, "dribbling": 40, "defending": 18, "physical": 72 },
+      { "id": "kerim-alajbegovic", "name": "Kerim Alajbegović", "pos": "CAM", "starter": false, "overall": 70, "pace": 80, "shooting": 66, "passing": 70, "dribbling": 78, "defending": 42, "physical": 62 },
+      { "id": "haris-tabakovic", "name": "Haris Tabaković", "pos": "ST", "starter": false, "overall": 73, "pace": 64, "shooting": 75, "passing": 64, "dribbling": 68, "defending": 36, "physical": 80 }
     ]
   },
   {
@@ -34,13 +54,24 @@
     "name": "Belgium",
     "code": "BEL",
     "flag": "🇧🇪",
-    "color": "#c8102e",
-    "rank": 5,
+    "color": "#e30613",
+    "rank": 8,
     "rating": { "attack": 84, "midfield": 83, "defense": 79, "overall": 82 },
     "players": [
-      { "id": "debruyne", "name": "Kevin De Bruyne", "pos": "CM", "overall": 90, "pace": 72, "shooting": 86, "passing": 93, "dribbling": 86, "defending": 64, "physical": 78 },
-      { "id": "lukaku", "name": "Romelu Lukaku", "pos": "ST", "overall": 85, "pace": 85, "shooting": 88, "passing": 70, "dribbling": 78, "defending": 38, "physical": 88 },
-      { "id": "courtois", "name": "Thibaut Courtois", "pos": "GK", "overall": 89, "pace": 50, "shooting": 25, "passing": 70, "dribbling": 45, "defending": 25, "physical": 86 }
+      { "id": "thibaut-courtois", "name": "Thibaut Courtois", "pos": "GK", "starter": true, "overall": 88, "pace": 50, "shooting": 28, "passing": 60, "dribbling": 48, "defending": 24, "physical": 84 },
+      { "id": "thomas-meunier", "name": "Thomas Meunier", "pos": "RB", "starter": true, "overall": 76, "pace": 76, "shooting": 58, "passing": 72, "dribbling": 72, "defending": 74, "physical": 78 },
+      { "id": "wout-faes", "name": "Wout Faes", "pos": "CB", "starter": true, "overall": 77, "pace": 72, "shooting": 40, "passing": 66, "dribbling": 60, "defending": 77, "physical": 80 },
+      { "id": "zeno-debast", "name": "Zeno Debast", "pos": "CB", "starter": true, "overall": 76, "pace": 74, "shooting": 38, "passing": 72, "dribbling": 68, "defending": 75, "physical": 78 },
+      { "id": "timothy-castagne", "name": "Timothy Castagne", "pos": "LB", "starter": true, "overall": 77, "pace": 80, "shooting": 56, "passing": 72, "dribbling": 74, "defending": 76, "physical": 80 },
+      { "id": "amadou-onana", "name": "Amadou Onana", "pos": "CDM", "starter": true, "overall": 80, "pace": 76, "shooting": 66, "passing": 74, "dribbling": 74, "defending": 80, "physical": 86 },
+      { "id": "youri-tielemans", "name": "Youri Tielemans", "pos": "CM", "starter": true, "overall": 82, "pace": 68, "shooting": 78, "passing": 84, "dribbling": 80, "defending": 72, "physical": 74 },
+      { "id": "kevin-de-bruyne", "name": "Kevin De Bruyne", "pos": "CAM", "starter": true, "overall": 88, "pace": 72, "shooting": 86, "passing": 93, "dribbling": 86, "defending": 64, "physical": 78 },
+      { "id": "jeremy-doku", "name": "Jérémy Doku", "pos": "RW", "starter": true, "overall": 82, "pace": 95, "shooting": 72, "passing": 74, "dribbling": 88, "defending": 38, "physical": 68 },
+      { "id": "leandro-trossard", "name": "Leandro Trossard", "pos": "LW", "starter": true, "overall": 81, "pace": 80, "shooting": 80, "passing": 78, "dribbling": 84, "defending": 44, "physical": 66 },
+      { "id": "romelu-lukaku", "name": "Romelu Lukaku", "pos": "ST", "starter": true, "overall": 84, "pace": 82, "shooting": 85, "passing": 72, "dribbling": 78, "defending": 42, "physical": 88 },
+      { "id": "matz-sels", "name": "Matz Sels", "pos": "GK", "starter": false, "overall": 79, "pace": 48, "shooting": 24, "passing": 58, "dribbling": 46, "defending": 22, "physical": 78 },
+      { "id": "charles-de-ketelaere", "name": "Charles De Ketelaere", "pos": "CAM", "starter": false, "overall": 80, "pace": 76, "shooting": 76, "passing": 80, "dribbling": 82, "defending": 50, "physical": 76 },
+      { "id": "axel-witsel", "name": "Axel Witsel", "pos": "CM", "starter": false, "overall": 77, "pace": 58, "shooting": 66, "passing": 78, "dribbling": 72, "defending": 76, "physical": 78 }
     ]
   },
   {
@@ -49,12 +80,23 @@
     "code": "ESP",
     "flag": "🇪🇸",
     "color": "#c60b1e",
-    "rank": 8,
+    "rank": 2,
     "rating": { "attack": 85, "midfield": 87, "defense": 83, "overall": 85 },
     "players": [
-      { "id": "rodri", "name": "Rodri", "pos": "CDM", "overall": 89, "pace": 70, "shooting": 78, "passing": 86, "dribbling": 80, "defending": 86, "physical": 84 },
-      { "id": "pedri", "name": "Pedri", "pos": "CM", "overall": 86, "pace": 78, "shooting": 75, "passing": 86, "dribbling": 88, "defending": 70, "physical": 64 },
-      { "id": "yamal", "name": "Lamine Yamal", "pos": "RW", "overall": 84, "pace": 88, "shooting": 80, "passing": 82, "dribbling": 90, "defending": 40, "physical": 62 }
+      { "id": "unai-simon", "name": "Unai Simón", "pos": "GK", "starter": true, "overall": 85, "pace": 50, "shooting": 26, "passing": 68, "dribbling": 50, "defending": 24, "physical": 82 },
+      { "id": "dani-carvajal", "name": "Dani Carvajal", "pos": "RB", "starter": true, "overall": 84, "pace": 80, "shooting": 60, "passing": 80, "dribbling": 80, "defending": 84, "physical": 80 },
+      { "id": "dean-huijsen", "name": "Dean Huijsen", "pos": "CB", "starter": true, "overall": 81, "pace": 78, "shooting": 44, "passing": 78, "dribbling": 70, "defending": 80, "physical": 80 },
+      { "id": "robin-le-normand", "name": "Robin Le Normand", "pos": "CB", "starter": true, "overall": 83, "pace": 76, "shooting": 40, "passing": 72, "dribbling": 66, "defending": 83, "physical": 82 },
+      { "id": "marc-cucurella", "name": "Marc Cucurella", "pos": "LB", "starter": true, "overall": 82, "pace": 82, "shooting": 56, "passing": 76, "dribbling": 80, "defending": 80, "physical": 78 },
+      { "id": "rodri", "name": "Rodri", "pos": "CDM", "starter": true, "overall": 90, "pace": 66, "shooting": 78, "passing": 86, "dribbling": 82, "defending": 87, "physical": 86 },
+      { "id": "pedri", "name": "Pedri", "pos": "CM", "starter": true, "overall": 88, "pace": 76, "shooting": 74, "passing": 88, "dribbling": 90, "defending": 70, "physical": 70 },
+      { "id": "fabian-ruiz", "name": "Fabián Ruiz", "pos": "CM", "starter": true, "overall": 85, "pace": 72, "shooting": 78, "passing": 85, "dribbling": 84, "defending": 72, "physical": 78 },
+      { "id": "lamine-yamal", "name": "Lamine Yamal", "pos": "RW", "starter": true, "overall": 89, "pace": 90, "shooting": 82, "passing": 86, "dribbling": 93, "defending": 40, "physical": 66 },
+      { "id": "nico-williams", "name": "Nico Williams", "pos": "LW", "starter": true, "overall": 84, "pace": 94, "shooting": 78, "passing": 78, "dribbling": 87, "defending": 42, "physical": 72 },
+      { "id": "mikel-oyarzabal", "name": "Mikel Oyarzabal", "pos": "ST", "starter": true, "overall": 84, "pace": 78, "shooting": 83, "passing": 80, "dribbling": 83, "defending": 54, "physical": 76 },
+      { "id": "david-raya", "name": "David Raya", "pos": "GK", "starter": false, "overall": 84, "pace": 49, "shooting": 25, "passing": 70, "dribbling": 52, "defending": 23, "physical": 80 },
+      { "id": "dani-olmo", "name": "Dani Olmo", "pos": "CAM", "starter": false, "overall": 85, "pace": 78, "shooting": 80, "passing": 84, "dribbling": 86, "defending": 56, "physical": 70 },
+      { "id": "ferran-torres", "name": "Ferran Torres", "pos": "ST", "starter": false, "overall": 82, "pace": 84, "shooting": 80, "passing": 76, "dribbling": 82, "defending": 46, "physical": 72 }
     ]
   },
   {
@@ -62,13 +104,24 @@
     "name": "France",
     "code": "FRA",
     "flag": "🇫🇷",
-    "color": "#0055a4",
-    "rank": 2,
+    "color": "#21305b",
+    "rank": 3,
     "rating": { "attack": 88, "midfield": 84, "defense": 85, "overall": 86 },
     "players": [
-      { "id": "mbappe", "name": "Kylian Mbappé", "pos": "ST", "overall": 91, "pace": 97, "shooting": 90, "passing": 80, "dribbling": 92, "defending": 36, "physical": 78 },
-      { "id": "griezmann", "name": "Antoine Griezmann", "pos": "CF", "overall": 86, "pace": 80, "shooting": 85, "passing": 87, "dribbling": 86, "defending": 60, "physical": 70 },
-      { "id": "tchouameni", "name": "Aurélien Tchouaméni", "pos": "CDM", "overall": 85, "pace": 76, "shooting": 68, "passing": 82, "dribbling": 76, "defending": 85, "physical": 84 }
+      { "id": "mike-maignan", "name": "Mike Maignan", "pos": "GK", "starter": true, "overall": 87, "pace": 54, "shooting": 28, "passing": 70, "dribbling": 54, "defending": 25, "physical": 84 },
+      { "id": "jules-kounde", "name": "Jules Koundé", "pos": "RB", "starter": true, "overall": 85, "pace": 86, "shooting": 52, "passing": 78, "dribbling": 80, "defending": 84, "physical": 80 },
+      { "id": "william-saliba", "name": "William Saliba", "pos": "CB", "starter": true, "overall": 86, "pace": 85, "shooting": 42, "passing": 74, "dribbling": 74, "defending": 86, "physical": 86 },
+      { "id": "dayot-upamecano", "name": "Dayot Upamecano", "pos": "CB", "starter": true, "overall": 85, "pace": 86, "shooting": 40, "passing": 72, "dribbling": 72, "defending": 84, "physical": 87 },
+      { "id": "theo-hernandez", "name": "Théo Hernández", "pos": "LB", "starter": true, "overall": 85, "pace": 90, "shooting": 70, "passing": 80, "dribbling": 84, "defending": 78, "physical": 84 },
+      { "id": "aurelien-tchouameni", "name": "Aurélien Tchouaméni", "pos": "CDM", "starter": true, "overall": 86, "pace": 74, "shooting": 72, "passing": 82, "dribbling": 78, "defending": 85, "physical": 85 },
+      { "id": "eduardo-camavinga", "name": "Eduardo Camavinga", "pos": "CM", "starter": true, "overall": 85, "pace": 84, "shooting": 66, "passing": 80, "dribbling": 86, "defending": 80, "physical": 80 },
+      { "id": "adrien-rabiot", "name": "Adrien Rabiot", "pos": "CM", "starter": true, "overall": 84, "pace": 74, "shooting": 74, "passing": 80, "dribbling": 80, "defending": 78, "physical": 84 },
+      { "id": "ousmane-dembele", "name": "Ousmane Dembélé", "pos": "RW", "starter": true, "overall": 88, "pace": 93, "shooting": 82, "passing": 82, "dribbling": 90, "defending": 44, "physical": 68 },
+      { "id": "kylian-mbappe", "name": "Kylian Mbappé", "pos": "ST", "starter": true, "overall": 91, "pace": 97, "shooting": 90, "passing": 80, "dribbling": 92, "defending": 36, "physical": 78 },
+      { "id": "michael-olise", "name": "Michael Olise", "pos": "LW", "starter": true, "overall": 85, "pace": 85, "shooting": 80, "passing": 84, "dribbling": 89, "defending": 44, "physical": 64 },
+      { "id": "brice-samba", "name": "Brice Samba", "pos": "GK", "starter": false, "overall": 81, "pace": 50, "shooting": 24, "passing": 64, "dribbling": 50, "defending": 22, "physical": 80 },
+      { "id": "marcus-thuram", "name": "Marcus Thuram", "pos": "ST", "starter": false, "overall": 84, "pace": 86, "shooting": 81, "passing": 72, "dribbling": 80, "defending": 44, "physical": 86 },
+      { "id": "manu-kone", "name": "Manu Koné", "pos": "CM", "starter": false, "overall": 82, "pace": 82, "shooting": 62, "passing": 76, "dribbling": 80, "defending": 80, "physical": 84 }
     ]
   },
   {
@@ -76,13 +129,24 @@
     "name": "Argentina",
     "code": "ARG",
     "flag": "🇦🇷",
-    "color": "#75aadb",
+    "color": "#6cace4",
     "rank": 1,
     "rating": { "attack": 87, "midfield": 85, "defense": 84, "overall": 86 },
     "players": [
-      { "id": "messi", "name": "Lionel Messi", "pos": "RW", "overall": 90, "pace": 80, "shooting": 87, "passing": 90, "dribbling": 94, "defending": 33, "physical": 64 },
-      { "id": "alvarez", "name": "Julián Álvarez", "pos": "ST", "overall": 84, "pace": 85, "shooting": 83, "passing": 78, "dribbling": 84, "defending": 50, "physical": 76 },
-      { "id": "emartinez", "name": "Emiliano Martínez", "pos": "GK", "overall": 86, "pace": 50, "shooting": 25, "passing": 68, "dribbling": 45, "defending": 25, "physical": 84 }
+      { "id": "emiliano-martinez", "name": "Emiliano Martínez", "pos": "GK", "starter": true, "overall": 86, "pace": 52, "shooting": 26, "passing": 66, "dribbling": 52, "defending": 24, "physical": 84 },
+      { "id": "nahuel-molina", "name": "Nahuel Molina", "pos": "RB", "starter": true, "overall": 80, "pace": 86, "shooting": 58, "passing": 74, "dribbling": 78, "defending": 78, "physical": 76 },
+      { "id": "cristian-romero", "name": "Cristian Romero", "pos": "CB", "starter": true, "overall": 86, "pace": 80, "shooting": 44, "passing": 70, "dribbling": 70, "defending": 86, "physical": 86 },
+      { "id": "lisandro-martinez", "name": "Lisandro Martínez", "pos": "CB", "starter": true, "overall": 84, "pace": 78, "shooting": 42, "passing": 76, "dribbling": 74, "defending": 84, "physical": 80 },
+      { "id": "nicolas-tagliafico", "name": "Nicolás Tagliafico", "pos": "LB", "starter": true, "overall": 81, "pace": 80, "shooting": 56, "passing": 74, "dribbling": 76, "defending": 80, "physical": 78 },
+      { "id": "rodrigo-de-paul", "name": "Rodrigo De Paul", "pos": "CM", "starter": true, "overall": 84, "pace": 78, "shooting": 76, "passing": 82, "dribbling": 84, "defending": 76, "physical": 82 },
+      { "id": "enzo-fernandez", "name": "Enzo Fernández", "pos": "CM", "starter": true, "overall": 85, "pace": 74, "shooting": 78, "passing": 86, "dribbling": 82, "defending": 78, "physical": 80 },
+      { "id": "alexis-mac-allister", "name": "Alexis Mac Allister", "pos": "CAM", "starter": true, "overall": 86, "pace": 76, "shooting": 80, "passing": 85, "dribbling": 85, "defending": 74, "physical": 78 },
+      { "id": "lionel-messi", "name": "Lionel Messi", "pos": "RW", "starter": true, "overall": 88, "pace": 80, "shooting": 87, "passing": 90, "dribbling": 92, "defending": 34, "physical": 64 },
+      { "id": "julian-alvarez", "name": "Julián Álvarez", "pos": "ST", "starter": true, "overall": 87, "pace": 85, "shooting": 85, "passing": 80, "dribbling": 86, "defending": 56, "physical": 78 },
+      { "id": "lautaro-martinez", "name": "Lautaro Martínez", "pos": "ST", "starter": true, "overall": 87, "pace": 86, "shooting": 87, "passing": 76, "dribbling": 84, "defending": 48, "physical": 82 },
+      { "id": "geronimo-rulli", "name": "Gerónimo Rulli", "pos": "GK", "starter": false, "overall": 80, "pace": 50, "shooting": 24, "passing": 62, "dribbling": 50, "defending": 22, "physical": 80 },
+      { "id": "giovani-lo-celso", "name": "Giovani Lo Celso", "pos": "CAM", "starter": false, "overall": 81, "pace": 74, "shooting": 76, "passing": 82, "dribbling": 84, "defending": 60, "physical": 72 },
+      { "id": "nico-gonzalez", "name": "Nicolás González", "pos": "LW", "starter": false, "overall": 81, "pace": 85, "shooting": 78, "passing": 74, "dribbling": 82, "defending": 52, "physical": 80 }
     ]
   }
 ]
