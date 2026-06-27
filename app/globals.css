@@ -112,6 +112,8 @@ body {
 }
 .ghost-btn {
   appearance: none;
+  display: inline-flex;
+  align-items: center;
   border: 1px solid rgba(255, 255, 255, 0.22);
   background: transparent;
   color: #fff;
@@ -121,6 +123,7 @@ body {
   padding: 7px 14px;
   border-radius: 8px;
   cursor: pointer;
+  text-decoration: none;
 }
 .ghost-btn:hover {
   background: rgba(255, 255, 255, 0.1);

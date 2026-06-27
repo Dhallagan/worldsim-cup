@@ -138,6 +138,9 @@ export default function Dashboard({ userEmail }: { userEmail?: string | null }) 
           ))}
         </nav>
         <div className="appbar-right">
+          <a className="ghost-btn" href="/deck.html">
+            Pitch deck ↗
+          </a>
           <button
             className="ghost-btn"
             onClick={() => setConsoleOpen((o) => !o)}
