@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import PathBracket from "./PathBracket";
 import PlayersTab from "./PlayersTab";
 import LiveMatch from "./LiveMatch";
-import AgentMatchReplay from "./AgentMatchReplay";
+import PitchView from "./PitchView";
 import AgentConsole, { type Line, toLine } from "./AgentConsole";
 import { getAgentMatch } from "@/lib/agentMatches";
 import { PATH, getTeam } from "@/lib/teams";
@@ -273,10 +273,7 @@ export default function Dashboard({ userEmail }: { userEmail?: string | null }) 
         />
       )}
       {agentReplay && agentMatch && (
-        <AgentMatchReplay
-          match={agentMatch}
-          onClose={() => setAgentReplay(false)}
-        />
+        <PitchView match={agentMatch} onClose={() => setAgentReplay(false)} />
       )}
 
       <AgentConsole

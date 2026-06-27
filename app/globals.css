@@ -700,6 +700,173 @@ body {
   line-height: 1.4;
 }
 
+/* ---------- Retro pitch view (Madden '98 style) ---------- */
+.pv-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 46;
+  background: rgba(5, 8, 18, 0.78);
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+.pv-card {
+  position: relative;
+  width: min(760px, 100%);
+  background: #0a0e1c;
+  border: 2px solid #20305e;
+  border-radius: 10px;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+  font-family: "Press Start 2P", ui-monospace, monospace;
+  color: #e6ebf5;
+}
+.pv-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 3;
+  appearance: none;
+  border: 0;
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 10px;
+}
+.pv-hud {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 14px 12px;
+  background: linear-gradient(180deg, #11183a, #0a0e1c);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}
+.pv-team {
+  font-size: 12px;
+}
+.pv-score {
+  font-size: 18px;
+  color: #ffe14d;
+}
+.pv-clock {
+  position: absolute;
+  right: 44px;
+  font-size: 10px;
+  color: #7fd1ff;
+}
+.pv-stage {
+  position: relative;
+  line-height: 0;
+}
+.pv-stage.goal {
+  animation: goalflash 0.4s steps(2) 3;
+}
+@keyframes goalflash {
+  50% { filter: brightness(1.6); }
+}
+.pv-canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+.pv-scanlines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.16) 0,
+    rgba(0, 0, 0, 0.16) 1px,
+    transparent 2px,
+    transparent 4px
+  );
+  mix-blend-mode: multiply;
+}
+.pv-watermark {
+  position: absolute;
+  left: 10px;
+  bottom: 8px;
+  font-size: 7px;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.1em;
+}
+.pv-goal {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 40px;
+  color: #ffe14d;
+  text-shadow: 3px 3px 0 #e8233f, -1px -1px 0 #000;
+  animation: pop 0.25s ease-out;
+}
+@keyframes pop {
+  from { transform: scale(0.6); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.pv-done {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background: rgba(5, 8, 18, 0.82);
+}
+.pv-final {
+  font-size: 13px;
+  color: #fff;
+  text-align: center;
+  line-height: 1.6;
+  padding: 0 20px;
+}
+.pv-replay {
+  appearance: none;
+  border: 2px solid #2f6fed;
+  background: #1a4fc4;
+  color: #fff;
+  font-family: inherit;
+  font-size: 10px;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.pv-ticker {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 12px 14px;
+  background: #070a16;
+  border-top: 2px solid #20305e;
+  min-height: 56px;
+}
+.pv-evt {
+  font-size: 9px;
+  line-height: 1.5;
+  color: #cdd8f5;
+}
+.pv-intent {
+  font-size: 8px;
+  line-height: 1.5;
+  color: #7fd1ff;
+}
+.pv-foot {
+  padding: 8px 14px 12px;
+  background: #070a16;
+  font-size: 7px;
+  color: rgba(255, 255, 255, 0.45);
+  letter-spacing: 0.06em;
+}
+
 /* ---------- Agent match replay modal ---------- */
 .am-backdrop {
   position: fixed;
