@@ -1,0 +1,88 @@
+[
+  {
+    "id": "usa",
+    "name": "United States",
+    "code": "USA",
+    "flag": "🇺🇸",
+    "color": "#0a3161",
+    "rank": 11,
+    "rating": { "attack": 77, "midfield": 79, "defense": 78, "overall": 78 },
+    "players": [
+      { "id": "pulisic", "name": "Christian Pulisic", "pos": "RW", "overall": 84, "pace": 90, "shooting": 82, "passing": 80, "dribbling": 87, "defending": 45, "physical": 66 },
+      { "id": "mckennie", "name": "Weston McKennie", "pos": "CM", "overall": 79, "pace": 75, "shooting": 74, "passing": 78, "dribbling": 76, "defending": 73, "physical": 82 },
+      { "id": "adams", "name": "Tyler Adams", "pos": "CDM", "overall": 78, "pace": 80, "shooting": 60, "passing": 76, "dribbling": 72, "defending": 82, "physical": 78 },
+      { "id": "robinson", "name": "Antonee Robinson", "pos": "LB", "overall": 78, "pace": 92, "shooting": 55, "passing": 72, "dribbling": 74, "defending": 78, "physical": 74 },
+      { "id": "turner", "name": "Matt Turner", "pos": "GK", "overall": 79, "pace": 50, "shooting": 25, "passing": 60, "dribbling": 40, "defending": 25, "physical": 78 }
+    ]
+  },
+  {
+    "id": "bosnia",
+    "name": "Bosnia & Herzegovina",
+    "code": "BIH",
+    "flag": "🇧🇦",
+    "color": "#002395",
+    "rank": 74,
+    "rating": { "attack": 74, "midfield": 72, "defense": 72, "overall": 73 },
+    "players": [
+      { "id": "dzeko", "name": "Edin Džeko", "pos": "ST", "overall": 80, "pace": 62, "shooting": 84, "passing": 76, "dribbling": 75, "defending": 40, "physical": 85 },
+      { "id": "pjanic", "name": "Miralem Pjanić", "pos": "CM", "overall": 80, "pace": 64, "shooting": 74, "passing": 86, "dribbling": 80, "defending": 68, "physical": 66 },
+      { "id": "tahirovic", "name": "Benjamin Tahirović", "pos": "CDM", "overall": 73, "pace": 70, "shooting": 62, "passing": 74, "dribbling": 72, "defending": 72, "physical": 74 }
+    ]
+  },
+  {
+    "id": "belgium",
+    "name": "Belgium",
+    "code": "BEL",
+    "flag": "🇧🇪",
+    "color": "#c8102e",
+    "rank": 5,
+    "rating": { "attack": 84, "midfield": 83, "defense": 79, "overall": 82 },
+    "players": [
+      { "id": "debruyne", "name": "Kevin De Bruyne", "pos": "CM", "overall": 90, "pace": 72, "shooting": 86, "passing": 93, "dribbling": 86, "defending": 64, "physical": 78 },
+      { "id": "lukaku", "name": "Romelu Lukaku", "pos": "ST", "overall": 85, "pace": 85, "shooting": 88, "passing": 70, "dribbling": 78, "defending": 38, "physical": 88 },
+      { "id": "courtois", "name": "Thibaut Courtois", "pos": "GK", "overall": 89, "pace": 50, "shooting": 25, "passing": 70, "dribbling": 45, "defending": 25, "physical": 86 }
+    ]
+  },
+  {
+    "id": "spain",
+    "name": "Spain",
+    "code": "ESP",
+    "flag": "🇪🇸",
+    "color": "#c60b1e",
+    "rank": 8,
+    "rating": { "attack": 85, "midfield": 87, "defense": 83, "overall": 85 },
+    "players": [
+      { "id": "rodri", "name": "Rodri", "pos": "CDM", "overall": 89, "pace": 70, "shooting": 78, "passing": 86, "dribbling": 80, "defending": 86, "physical": 84 },
+      { "id": "pedri", "name": "Pedri", "pos": "CM", "overall": 86, "pace": 78, "shooting": 75, "passing": 86, "dribbling": 88, "defending": 70, "physical": 64 },
+      { "id": "yamal", "name": "Lamine Yamal", "pos": "RW", "overall": 84, "pace": 88, "shooting": 80, "passing": 82, "dribbling": 90, "defending": 40, "physical": 62 }
+    ]
+  },
+  {
+    "id": "france",
+    "name": "France",
+    "code": "FRA",
+    "flag": "🇫🇷",
+    "color": "#0055a4",
+    "rank": 2,
+    "rating": { "attack": 88, "midfield": 84, "defense": 85, "overall": 86 },
+    "players": [
+      { "id": "mbappe", "name": "Kylian Mbappé", "pos": "ST", "overall": 91, "pace": 97, "shooting": 90, "passing": 80, "dribbling": 92, "defending": 36, "physical": 78 },
+      { "id": "griezmann", "name": "Antoine Griezmann", "pos": "CF", "overall": 86, "pace": 80, "shooting": 85, "passing": 87, "dribbling": 86, "defending": 60, "physical": 70 },
+      { "id": "tchouameni", "name": "Aurélien Tchouaméni", "pos": "CDM", "overall": 85, "pace": 76, "shooting": 68, "passing": 82, "dribbling": 76, "defending": 85, "physical": 84 }
+    ]
+  },
+  {
+    "id": "argentina",
+    "name": "Argentina",
+    "code": "ARG",
+    "flag": "🇦🇷",
+    "color": "#75aadb",
+    "rank": 1,
+    "rating": { "attack": 87, "midfield": 85, "defense": 84, "overall": 86 },
+    "players": [
+      { "id": "messi", "name": "Lionel Messi", "pos": "RW", "overall": 90, "pace": 80, "shooting": 87, "passing": 90, "dribbling": 94, "defending": 33, "physical": 64 },
+      { "id": "alvarez", "name": "Julián Álvarez", "pos": "ST", "overall": 84, "pace": 85, "shooting": 83, "passing": 78, "dribbling": 84, "defending": 50, "physical": 76 },
+      { "id": "emartinez", "name": "Emiliano Martínez", "pos": "GK", "overall": 86, "pace": 50, "shooting": 25, "passing": 68, "dribbling": 45, "defending": 25, "physical": 84 }
+    ]
+  }
+]
