@@ -5,6 +5,7 @@ import PathBracket from "./PathBracket";
 import PlayersTab from "./PlayersTab";
 import LiveMatch from "./LiveMatch";
 import PitchView from "./PitchView";
+import BroadcastHero from "./BroadcastHero";
 import AgentConsole, { type Line, toLine } from "./AgentConsole";
 import { getAgentMatch } from "@/lib/agentMatches";
 import { PATH, getTeam } from "@/lib/teams";
@@ -163,14 +164,22 @@ export default function Dashboard({ userEmail }: { userEmail?: string | null }) 
       </header>
 
       <main className={`page ${consoleOpen ? "with-console" : ""}`}>
-        <section className="hero">
+        {agentMatch && (
+          <BroadcastHero
+            match={agentMatch}
+            titlePct={odds?.titlePct ?? null}
+            onExpand={() => setAgentReplay(true)}
+          />
+        )}
+
+        <section className="hero hero-compact">
           <div>
-            <p className="hero-kicker">FIFA World Cup · Knockout Gauntlet</p>
-            <h1>USA&apos;s Road to the Cup</h1>
+            <p className="hero-kicker">The probability problem</p>
+            <h1>Can the USA win the World Cup?</h1>
             <p className="hero-sub">
-              Five wins from glory — Bosnia, Belgium, Spain, France, then
-              Argentina. A MiroFish swarm of player agents simulates the run to
-              find out: can the USA actually win it all?
+              A MiroFish swarm of player agents plays out USA&apos;s gauntlet —
+              Bosnia, Belgium, Spain, France, Argentina — while a Monte Carlo
+              engine computes the real odds of surviving all five.
             </p>
             <button className="cta" onClick={runSwarm} disabled={running}>
               {running
@@ -232,19 +241,6 @@ export default function Dashboard({ userEmail }: { userEmail?: string | null }) 
               }
             }}
           />
-        )}
-        {tab === "Matches" && agentMatch && (
-          <button
-            className="agent-match-cta"
-            onClick={() => setAgentReplay(true)}
-          >
-            <span className="amc-badge">NEW · MiroFish</span>
-            <span className="amc-text">
-              🧠 The agents <b>actually played</b> the Spain quarterfinal —{" "}
-              {agentMatch.agentCalls} possession-by-possession decisions. Watch
-              it →
-            </span>
-          </button>
         )}
         {tab === "Matches" && run && (
           <p className="hint-line">
