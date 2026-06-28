@@ -15,6 +15,7 @@ const ICONS: Record<AgentEventType, string> = {
   shot: "🎯",
   save: "🧤",
   goal: "⚽",
+  card: "🟨",
   fulltime: "⏱️",
 };
 

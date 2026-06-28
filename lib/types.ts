@@ -42,6 +42,7 @@ export type AgentEventType =
   | "shot"
   | "save"
   | "goal"
+  | "card"
   | "fulltime";
 
 export interface AgentMatchEvent {

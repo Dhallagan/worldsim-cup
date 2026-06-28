@@ -139,6 +139,64 @@ async function decideAction(
   }
 }
 
+type DefStance = "press" | "contain" | "intercept" | "foul";
+const DEF_STANCES: DefStance[] = ["press", "contain", "intercept", "foul"];
+
+function heuristicDefense(
+  action: PossessionAction,
+  defender: Player,
+  rng: () => number,
+): { stance: DefStance; intent: string } {
+  if (action === "shoot" || action === "cross")
+    return { stance: "contain", intent: "Block the shot!" };
+  if (action === "pass")
+    return rng() < 0.5
+      ? { stance: "intercept", intent: "Read the pass." }
+      : { stance: "contain", intent: "Hold my shape." };
+  if (defender.defending > 80 && rng() < 0.6)
+    return { stance: "press", intent: "Step in and win it." };
+  return rng() < 0.2
+    ? { stance: "foul", intent: "Take one for the team." }
+    : { stance: "press", intent: "Jockey and press." };
+}
+
+/** The defending agent decides how to stop the carrier — the other side of the contest. */
+async function decideDefense(
+  defender: Player,
+  carrier: Player,
+  action: PossessionAction,
+  defTeam: Team,
+  zone: Zone,
+  rng: () => number,
+): Promise<{ decision: { stance: DefStance; intent: string }; usedLLM: boolean }> {
+  if (!hasAI())
+    return { decision: heuristicDefense(action, defender, rng), usedLLM: false };
+  try {
+    const model = getFastModel()!;
+    const { object } = await withTimeout(
+      generateObject({
+        model,
+        schema: z.object({
+          stance: z.enum(DEF_STANCES as [DefStance, ...DefStance[]]),
+          intent: z.string(),
+        }),
+        prompt:
+          `You are ${defender.name}, a ${defender.pos} for ${defTeam.name} (defending ${defender.defending}, pace ${defender.pace}, physical ${defender.physical}). ` +
+          `${carrier.name} has the ball in your ${zone === "att" ? "attacking" : zone === "mid" ? "middle" : "defensive"} third and is attempting a ${action}. ` +
+          `Choose how to defend: press (commit to win it), contain (jockey, hold shape), intercept (read the pass), or foul (cynical stop). ` +
+          `Pick what fits the danger and your attributes. Short first-person intent (max 8 words).`,
+      }),
+      8000,
+    );
+    return {
+      decision: { stance: object.stance, intent: object.intent?.slice(0, 60) || "…" },
+      usedLLM: true,
+    };
+  } catch {
+    return { decision: heuristicDefense(action, defender, rng), usedLLM: false };
+  }
+}
+
 interface Resolution {
   events: Omit<AgentMatchEvent, "minute" | "homeGoals" | "awayGoals">[];
   goalFor: "atk" | null;
@@ -154,11 +212,51 @@ function resolve(
   defTeam: Team,
   zone: Zone,
   rng: () => number,
+  defender: Player,
+  defense: { stance: DefStance; intent: string },
 ): Resolution {
-  const defender = pickDefender(defTeam, rng);
   const gk = keeper(defTeam);
   const mates = byId(attackTeam);
   const intent = decision.intent;
+  const dInt = defense.intent;
+  const defBonus =
+    defense.stance === "press"
+      ? 8
+      : defense.stance === "contain"
+        ? -3
+        : defense.stance === "intercept"
+          ? 3
+          : 0;
+
+  // Cynical foul: stops the attack but concedes a free kick (attack keeps it).
+  if (
+    defense.stance === "foul" &&
+    (decision.action === "pass" ||
+      decision.action === "dribble" ||
+      decision.action === "longball" ||
+      decision.action === "clear")
+  ) {
+    const card = rng() < 0.18;
+    return {
+      events: [
+        {
+          teamId: defTeam.id,
+          zone,
+          type: card ? "card" : "tackle",
+          playerId: defender.id,
+          player: defender.name,
+          text: card
+            ? `${defender.name} fouls ${carrier.name} — booked`
+            : `${defender.name} fouls ${carrier.name}`,
+          intent: dInt,
+        },
+      ],
+      goalFor: null,
+      turnover: false,
+      nextZone: zone,
+      nextCarrier: pickCarrier(attackTeam, zone, rng),
+    };
+  }
 
   const ev = (
     e: Omit<AgentMatchEvent, "minute" | "homeGoals" | "awayGoals">,
@@ -233,7 +331,9 @@ function resolve(
     }
 
     case "dribble": {
-      const p = sigmoid(((carrier.dribbling + carrier.pace) / 2 - defender.defending) / 12 + 0.1);
+      const p = sigmoid(
+        ((carrier.dribbling + carrier.pace) / 2 - (defender.defending + defBonus)) / 12 + 0.1,
+      );
       if (rng() < p) {
         return {
           events: [
@@ -249,7 +349,8 @@ function resolve(
           ],
           goalFor: null,
           turnover: false,
-          nextZone: advance(zone),
+          // beating a high press springs you forward; contain holds you up
+          nextZone: defense.stance === "contain" ? zone : advance(zone),
           nextCarrier: carrier,
         };
       }
@@ -261,7 +362,8 @@ function resolve(
             type: "tackle",
             playerId: defender.id,
             player: defender.name,
-            text: `${defender.name} dispossesses ${carrier.name}`,
+            text: `${defender.name} ${defense.stance === "press" ? "steps in and robs" : "dispossesses"} ${carrier.name}`,
+            intent: dInt,
           }),
         ],
         goalFor: null,
@@ -324,6 +426,7 @@ function resolve(
             playerId: defender.id,
             player: defender.name,
             text: `${defender.name} reads the long ball`,
+            intent: dInt,
           }),
         ],
         goalFor: null,
@@ -338,7 +441,9 @@ function resolve(
       const target =
         (decision.targetId && mates.get(decision.targetId)) ||
         pickCarrier(attackTeam, advance(zone), rng);
-      const p = sigmoid((carrier.passing - defender.defending * 0.5) / 12 + 0.5);
+      const p = sigmoid(
+        (carrier.passing - (defender.defending + defBonus) * 0.5) / 12 + 0.5,
+      );
       if (rng() < p) {
         const forward = rng() < 0.6;
         return {
@@ -370,6 +475,7 @@ function resolve(
             playerId: defender.id,
             player: defender.name,
             text: `${defender.name} cuts out the pass`,
+            intent: dInt,
           }),
         ],
         goalFor: null,
@@ -431,7 +537,27 @@ export async function simulateAgentMatch(
     );
     if (usedLLM) calls++;
 
-    const res = resolve(decision, carrier, attackTeam, defTeam, zone, rng);
+    // The defender agent decides how to stop it — two agents per possession.
+    const { decision: defDecision, usedLLM: defLLM } = await decideDefense(
+      defender,
+      carrier,
+      decision.action,
+      defTeam,
+      zone,
+      rng,
+    );
+    if (defLLM) calls++;
+
+    const res = resolve(
+      decision,
+      carrier,
+      attackTeam,
+      defTeam,
+      zone,
+      rng,
+      defender,
+      defDecision,
+    );
 
     if (res.goalFor === "atk") {
       if (poss === "home") homeGoals++;
