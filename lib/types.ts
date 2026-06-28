@@ -11,6 +11,17 @@ export interface Player {
   physical: number;
   starter?: boolean;
   persona?: string;
+  // EA Sports FC-style extended attributes (drive on-pitch movement)
+  stamina?: number;
+  acceleration?: number;
+  sprintSpeed?: number;
+  agility?: number;
+  strength?: number;
+  aggression?: number;
+  positioning?: number;
+  vision?: number;
+  workRateAtt?: "low" | "medium" | "high";
+  workRateDef?: "low" | "medium" | "high";
 }
 
 /* ---------- Multi-agent match sim (MiroFish) ---------- */
@@ -167,4 +178,43 @@ export interface OddsReport {
   titlePct: number; // cumulative probability USA wins it all, 0..1
   runs: number;
   summary?: string; // ReportAgent narration (Slice 4)
+}
+
+/* ---------- Full MiroFish tournament ---------- */
+
+export interface TournamentStanding {
+  teamId: string;
+  played: number;
+  won: number;
+  drawn: number;
+  lost: number;
+  goalsFor: number;
+  goalsAgainst: number;
+  points: number;
+}
+
+export interface TournamentMatch extends MatchResult {
+  id: string;
+  stage: "Group" | "Semifinal" | "Final";
+  group?: "A" | "B";
+  winnerId: string | null;
+}
+
+export interface TournamentTopScorer {
+  player: string;
+  teamId: string;
+  goals: number;
+}
+
+export interface TournamentRun {
+  id: string;
+  name: string;
+  teams: string[];
+  groups: Record<"A" | "B", string[]>;
+  standings: Record<"A" | "B", TournamentStanding[]>;
+  matches: TournamentMatch[];
+  semifinals: TournamentMatch[];
+  final: TournamentMatch;
+  championId: string;
+  topScorers: TournamentTopScorer[];
 }

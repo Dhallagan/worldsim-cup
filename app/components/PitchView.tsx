@@ -318,7 +318,7 @@ export default function PitchView({
       stopped = true;
       cancelAnimationFrame(raf);
     };
-  }, [steps, spots, home.color, away.color, nonce]);
+  }, [steps, spots, home.id, home.color, away.color, nonce]);
 
   return (
     <div className="pv-backdrop" onClick={onClose}>

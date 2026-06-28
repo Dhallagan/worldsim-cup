@@ -209,6 +209,194 @@ body {
   max-width: 52ch;
 }
 
+.cta {
+  appearance: none;
+  min-height: 42px;
+  margin-top: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  padding: 0 16px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(47, 111, 237, 0.22);
+}
+
+.cta:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+/* ---------- Full tournament ---------- */
+.tournament {
+  display: grid;
+  gap: 18px;
+}
+
+.t-hero {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(135deg, rgba(47, 111, 237, 0.1), rgba(24, 169, 87, 0.1)),
+    var(--panel);
+  box-shadow: var(--shadow);
+  padding: 22px;
+}
+
+.t-hero h1 {
+  margin: 0;
+  max-width: 760px;
+  font-size: clamp(26px, 4vw, 46px);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+}
+
+.t-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.t-grid.two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.t-grid.split {
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+}
+
+.t-panel {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+  box-shadow: var(--shadow);
+  padding: 18px;
+}
+
+.t-panel-head {
+  min-height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.t-panel-head h2 {
+  margin: 0;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+}
+
+.t-panel-head span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.standings {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.standings th,
+.standings td {
+  border-top: 1px solid var(--line);
+  padding: 11px 8px;
+  text-align: left;
+  font-size: 13px;
+}
+
+.standings th {
+  color: var(--muted);
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.standings th:not(:first-child),
+.standings td:not(:first-child) {
+  width: 56px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.fixture-list,
+.scorer-list {
+  display: grid;
+  gap: 10px;
+}
+
+.fixture-card {
+  appearance: none;
+  width: 100%;
+  min-height: 82px;
+  display: grid;
+  gap: 4px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfcff;
+  padding: 12px;
+  color: var(--ink);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.fixture-card:hover {
+  border-color: rgba(47, 111, 237, 0.45);
+  box-shadow: 0 8px 20px rgba(14, 20, 48, 0.08);
+}
+
+.fixture-stage,
+.fixture-teams,
+.fixture-winner {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.fixture-stage {
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.fixture-card strong {
+  font-size: 18px;
+  letter-spacing: -0.02em;
+}
+
+.scorer-list div {
+  min-height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+}
+
+.scorer-list strong {
+  min-width: 34px;
+  height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: #eaf1ff;
+  color: var(--accent-ink);
+  font-variant-numeric: tabular-nums;
+}
+
 /* ---------- Broadcast hero (the pitch as TV) ---------- */
 .bcast {
   margin-bottom: 26px;

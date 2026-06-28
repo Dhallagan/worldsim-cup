@@ -34,7 +34,6 @@ export default function LiveMatch({
   const [clock, setClock] = useState(0);
 
   useEffect(() => {
-    setClock(0);
     const id = setInterval(() => {
       setClock((c) => {
         if (c >= FINAL_MIN) {
@@ -107,11 +106,9 @@ export default function LiveMatch({
         </div>
 
         {!live && (
-          <div className={`lm-result ${result.usaWon ? "win" : "loss"}`}>
+          <div className="lm-result win">
             <span>
-              {result.usaWon
-                ? `${home.code} advance ✅`
-                : `${away.code} go through ❌`}
+              {result.usaWon ? `${home.code} advance` : `${away.code} advance`}
             </span>
             {onNext && (
               <button className="lm-next" onClick={onNext}>

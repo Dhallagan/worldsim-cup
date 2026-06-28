@@ -34,7 +34,6 @@ export default function AgentMatchReplay({
   const feedRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    setClock(0);
     const id = setInterval(() => {
       setClock((c) => {
         if (c >= FINAL_MIN) {

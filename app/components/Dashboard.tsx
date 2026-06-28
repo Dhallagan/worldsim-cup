@@ -6,6 +6,7 @@ import PlayersTab from "./PlayersTab";
 import LiveMatch from "./LiveMatch";
 import PitchView from "./PitchView";
 import BroadcastHero from "./BroadcastHero";
+import TournamentTab from "./TournamentTab";
 import AgentConsole, { type Line, toLine } from "./AgentConsole";
 import { getAgentMatch } from "@/lib/agentMatches";
 import { PATH, getTeam } from "@/lib/teams";
@@ -15,9 +16,11 @@ import type {
   OddsReport,
   Persona,
   Playthrough,
+  TournamentMatch,
+  TournamentRun,
 } from "@/lib/types";
 
-const TABS = ["Matches", "Players"] as const;
+const TABS = ["Tournament", "Matches", "Players"] as const;
 type Tab = (typeof TABS)[number];
 
 function fmtPct(n: number): string {
@@ -25,10 +28,11 @@ function fmtPct(n: number): string {
 }
 
 export default function Dashboard({ userEmail }: { userEmail?: string | null }) {
-  const [tab, setTab] = useState<Tab>("Matches");
+  const [tab, setTab] = useState<Tab>("Tournament");
   const [run, setRun] = useState<Playthrough | null>(null);
   const [odds, setOdds] = useState<OddsReport | null>(null);
   const [personas, setPersonas] = useState<Persona[]>([]);
+  const [tournament, setTournament] = useState<TournamentRun | null>(null);
   const [report, setReport] = useState<string | null>(null);
 
   const [running, setRunning] = useState(false);
@@ -36,6 +40,8 @@ export default function Dashboard({ userEmail }: { userEmail?: string | null }) 
   const [lines, setLines] = useState<Line[]>([]);
   const [stage, setStage] = useState("");
   const [liveMatch, setLiveMatch] = useState<MatchResult | null>(null);
+  const [liveTournamentMatch, setLiveTournamentMatch] =
+    useState<TournamentMatch | null>(null);
   const [agentReplay, setAgentReplay] = useState(false);
   const agentMatch = getAgentMatch("usa-spain");
 
@@ -45,9 +51,14 @@ export default function Dashboard({ userEmail }: { userEmail?: string | null }) 
 
   // Quick deterministic odds on mount so the page is never empty.
   useEffect(() => {
-    fetch("/api/odds")
-      .then((r) => r.json())
-      .then((d: OddsReport) => setOdds((cur) => cur ?? d))
+    Promise.all([
+      fetch("/api/odds").then((r) => r.json() as Promise<OddsReport>),
+      fetch("/api/tournament").then((r) => r.json() as Promise<TournamentRun>),
+    ])
+      .then(([oddsReport, tournamentRun]) => {
+        setOdds((cur) => cur ?? oddsReport);
+        setTournament((cur) => cur ?? tournamentRun);
+      })
       .catch(() => {});
   }, []);
 
@@ -84,6 +95,7 @@ export default function Dashboard({ userEmail }: { userEmail?: string | null }) 
     setReport(null);
     setRun(null);
     setLiveMatch(null);
+    setLiveTournamentMatch(null);
 
     try {
       const res = await fetch("/api/agent", { method: "POST" });
@@ -242,6 +254,12 @@ export default function Dashboard({ userEmail }: { userEmail?: string | null }) 
             }}
           />
         )}
+        {tab === "Tournament" && (
+          <TournamentTab
+            tournament={tournament}
+            onSelectMatch={setLiveTournamentMatch}
+          />
+        )}
         {tab === "Matches" && run && (
           <p className="hint-line">
             Tip: click any match to replay the odds sim with commentary.
@@ -252,6 +270,7 @@ export default function Dashboard({ userEmail }: { userEmail?: string | null }) 
 
       {liveMatch && (
         <LiveMatch
+          key={`${liveMatch.round}-${liveMatch.homeId}-${liveMatch.awayId}`}
           result={liveMatch}
           onClose={closeMatch}
           // Tour controls are passed ONLY during a swarm auto-tour. A manual
@@ -266,6 +285,16 @@ export default function Dashboard({ userEmail }: { userEmail?: string | null }) 
                     : undefined,
               }
             : {})}
+        />
+      )}
+      {liveTournamentMatch && (
+        <LiveMatch
+          key={liveTournamentMatch.id}
+          result={liveTournamentMatch}
+          onClose={() => setLiveTournamentMatch(null)}
+          matchLabel={`${liveTournamentMatch.stage}${
+            liveTournamentMatch.group ? ` · Group ${liveTournamentMatch.group}` : ""
+          }`}
         />
       )}
       {agentReplay && agentMatch && (
